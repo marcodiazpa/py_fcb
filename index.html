@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drageable</title>
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .container {
+      margin: auto;
+    }
+
+    .element {
+      width: 70px;
+      height: 80px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      background-color: rgb(26, 26, 26);
+      border: 5px solid rgb(26, 26, 26);
+      border-radius: 50%;
+    }
+
+    .element2 {
+      height: 25px;
+      background-color: rgb(26, 26, 26);
+      border: 5px solid rgb(26, 26, 26);
+      border-radius: 10%;
+      text-align: center;
+      color: white;
+      font-family: 'Arial Black';
+
+
+    }
+  </style>
+</head>
+
+<body onload="move('element')">
+  <div class="container">
+    <div class="element"
+      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/683840-1620304992.jpg?lm=1')">
+    </div>
+    <div class="element2"> Pedri
+    </div>
+    <div class="element" 
+      style="background-image: url('https://phx02pap003files.storage.live.com/y4mW7tGBcd2KpBid0px39RqoiHehYQBC8zUs0YVkRYL0m-M81X-EFISD6IgM1jFYjU-HqS3ZAYIC6b7-IvgQmctJq5008u-KPObp43vmMG8z26QUNaXSB6uwEEWZvA6NRJHJ9HulGyXj1UkYqi88emaoqVjrKku729vqQHCK3OK1TxKQWpVa91FLTTq-PBXlmji?width=139&height=181&cropmode=none');">
+    </div>
+    <div class="element"
+      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/646740-1653039221.jpg?lm=1')">
+    </div>
+    <div class="element"
+      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/38253-1642434304.jpg?lm=1')">
+    </div>
+    <div class="element" style="background-color: aqua;"></div>
+    <!-- 
+      <div class="element" style="background: red"></div>
+      <div class="element" style="background: yellow"></div>
+      <div class="element" style="background: green"></div>
+      <div class="element" style="background: blue"></div>
+        -->
+  </div>
+  <!-- 
+    <script src="app.js"></script>     
+    -->
+  <script>
+    var chooseElement;
+
+    const move = function (element, element2) {
+      const elements = document.querySelectorAll()
+      querySelectorAll(".element", ".element2");
+
+      elements.forEach((element) => {
+        element.addEventListener("mousedown", () => {
+          element.style.position = "absolute";
+          chooseElement = element;
+
+          document.onmousemove = (e) => {
+            var x = e.pageX;
+            var y = e.pageY;
+
+            chooseElement.style.left = x - 50 + "px";
+            chooseElement.style.top = y - 50 + "px";
+
+            console.log(chooseElement);
+          };
+        });
+      });
+
+      document.onmouseup = function (e) {
+        chooseElement = null;
+      };
+    };
+  </script>
+  </p>
+</body>
+
+</html>
