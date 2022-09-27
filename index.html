@@ -5,19 +5,24 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drageable2</title>
+  <title>Drageable</title>
 
   <style>
     .container {
-      display: flex;
-      justify-content: flex-start;
-    }
+      background-color: rgb(7, 87, 54);
+      background-image: url("imagenes/field_grass_striped.svg");
+      width: 452px;
+      height: 684px;
 
-    .container {
-      margin: auto;
     }
 
     .element {
+      position:fixed;
+
+
+    }
+
+    .elem_top {
       width: 70px;
       height: 80px;
       background-repeat: no-repeat;
@@ -26,55 +31,105 @@
       background-color: rgb(26, 26, 26);
       border: 5px solid rgb(26, 26, 26);
       border-radius: 50%;
+      align-content: center;
+      margin: auto;
     }
 
-    .element2 {
+    .elem_bot {
       height: 25px;
       background-color: rgb(26, 26, 26);
-      border: 5px solid rgb(26, 26, 26);
-      border-radius: 10%;
-      text-align: center;
-      color: white;
+      border: 2px solid rgb(26, 26, 26);
+      border-radius: 10px;
+      padding: 0px 5px 0px;
       font-family: 'Arial Black';
-
-
+      size: 20;
+      color: white;
+      width: max-content;
+      align-content: center;
+      margin: auto;
+      margin-top: -10px;
     }
   </style>
+
 </head>
 
-<body onload="move('element')">
+<body onload="move('element')" style="background-color: rgb(50, 51, 61)">
+
   <div class="container">
-    <div class="element"
-      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/683840-1620304992.jpg?lm=1')">
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/pedri.jpg')">
+      </div>
+      <center class="elem_bot"> Pedri
+      </center>
     </div>
-    <div class="element2"> Pedri
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/ansu.jpg');">
+      </div>
+      <div class="elem_bot"> Ansu-Fati
+      </div>
     </div>
-    <div class="element" 
-      style="background-image: url('https://phx02pap003files.storage.live.com/y4mW7tGBcd2KpBid0px39RqoiHehYQBC8zUs0YVkRYL0m-M81X-EFISD6IgM1jFYjU-HqS3ZAYIC6b7-IvgQmctJq5008u-KPObp43vmMG8z26QUNaXSB6uwEEWZvA6NRJHJ9HulGyXj1UkYqi88emaoqVjrKku729vqQHCK3OK1TxKQWpVa91FLTTq-PBXlmji?width=139&height=181&cropmode=none');">
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/gavi.jpg')">
+      </div>
+      <div class="elem_bot"> Gavi
+      </div>
     </div>
-    <div class="element"
-      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/646740-1653039221.jpg?lm=1')">
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/lewandoski.jpg')">
+      </div>
+      <div class="elem_bot"> Lewandoski
+      </div>
     </div>
-    <div class="element"
-      style="background-image: url('https://img.a.transfermarkt.technology/portrait/header/38253-1642434304.jpg?lm=1')">
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/terstegen.png')">
+      </div>
+      <div class="elem_bot"> Ter Stegen
+      </div>
     </div>
-    <div class="element" style="background-color: aqua;"></div>
-    <!-- 
-      <div class="element" style="background: red"></div>
-      <div class="element" style="background: yellow"></div>
-      <div class="element" style="background: green"></div>
-      <div class="element" style="background: blue"></div>
-        -->
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/kounde.png')">
+      </div>
+      <div class="elem_bot"> Koundé
+      </div>
+    </div>
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/araujo.png')">
+      </div>
+      <div class="elem_bot"> Araujo
+      </div>
+    </div>
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/balde.png')">
+      </div>
+      <div class="elem_bot"> balde
+      </div>
+    </div>
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/cristensen.png')">
+      </div>
+      <div class="elem_bot"> Cristensen
+      </div>
+    </div>
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/dembele.jpg')">
+      </div>
+      <div class="elem_bot"> Dembelé
+      </div>
+    </div>
+    <div class="element">
+      <div class="elem_top" style="background-image: url('imagenes/busquets.jpg')">
+      </div>
+      <div class="elem_bot"> Busquets
+      </div>
+    </div>
+
+
   </div>
-  <!-- 
-    <script src="app.js"></script>     
-    -->
   <script>
     var chooseElement;
 
-    const move = function (element, element2) {
-      const elements = document.querySelectorAll()
-      querySelectorAll(".element", ".element2");
+    const move = function (element) {
+      const elements = document.querySelectorAll(".element");
 
       elements.forEach((element) => {
         element.addEventListener("mousedown", () => {
@@ -88,6 +143,7 @@
             chooseElement.style.left = x - 50 + "px";
             chooseElement.style.top = y - 50 + "px";
 
+
             console.log(chooseElement);
           };
         });
@@ -98,7 +154,6 @@
       };
     };
   </script>
-  </p>
 </body>
 
 </html>
